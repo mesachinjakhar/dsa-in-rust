@@ -1,22 +1,31 @@
-pub fn greater_element(arr: Vec<i32> ) -> Vec<i32> {
-    let n = arr.len(); 
+use std::collections::HashMap;
+
+
+pub fn greater_element(list1: Vec<i32> ,list2: Vec<i32> ) -> Vec<i32> {
+    let n = list2.len(); 
     let mut stack: Vec<i32> = Vec::with_capacity(n);
     let mut ans: Vec<i32> = Vec::with_capacity(n);
+    let mut map: HashMap<i32, i32> = HashMap::new();
 
     for i in (0..n).rev() {
-        while !stack.is_empty() && arr[i] > *stack.last().unwrap() {
+        while !stack.is_empty() && list2[i] > *stack.last().unwrap() {
             stack.pop();
         }
 
         if stack.is_empty() {
-            ans.push(-1);
+            map.insert(list2[i], -1);
+            
         } else {
-            ans.push(*stack.last().unwrap());
+            map.insert(list2[i], *stack.last().unwrap());
         }
 
-        stack.push(arr[i]);
+        stack.push(list2[i]);
     }
 
-    ans.reverse();
+    for i in 0..list1.len() {
+        if let Some(v) = map.get(&list1[i]) {
+            ans.push(*v);
+        }
+    }
     ans
 }
