@@ -26,6 +26,6 @@ pub fn greater_element(list1: Vec<i32> ,list2: Vec<i32> ) -> Vec<i32> {
         if let Some(v) = map.get(&list1[i]) {
             ans.push(*v);
         }
-    }
+    };
     ans
 }
