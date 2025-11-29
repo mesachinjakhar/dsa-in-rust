@@ -50,5 +50,9 @@ fn main() {
     let arr = vec![2,7,11,15];
     println!("result: {:?}", arrays::pair_sum::optimize_approach(arr, 9));
 
+    // majority element brute force
+    let arr = vec![1,2,1,1];
+    println!("result: {:?}", arrays::majority_element::brute_force(arr));
+
 
 }
