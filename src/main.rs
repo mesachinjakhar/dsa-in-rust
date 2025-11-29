@@ -38,5 +38,17 @@ fn main() {
     let arr = vec![4,1,2,1,2];
     println!("result: {:?}", arrays::single_number::optimize_approach(arr));
 
+    // max subarray brute force
+    let arr = vec![3,-4,5,4,-1,7,-8];
+    println!("result: {:?}", arrays::maximum_subarray::brute_force(arr));
+
+    // pair sum brute force
+    let arr = vec![2,7,11,15];
+    println!("result: {:?}", arrays::pair_sum::brute_force(arr, 9));
+
+    // pair sum optimize approach
+    let arr = vec![2,7,11,15];
+    println!("result: {:?}", arrays::pair_sum::optimize_approach(arr, 9));
+
 
 }
