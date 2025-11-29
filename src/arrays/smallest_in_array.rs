@@ -1,4 +1,4 @@
-use std::i32;
+// use std::i32;
 
 pub fn smallest_in_array(arr: Vec<i32>) -> i32 {
     let mut smallest:i32 = i32::MAX;
@@ -21,5 +21,10 @@ pub fn largets_in_array(arr: Vec<i32>) -> i32 {
         }
     }
     largest
+}
 
+pub fn change_array(arr: &mut Vec<i32>) {
+    for i in 0..arr.len() {
+        arr[i] = arr[i] * 2;
+    }
 }

@@ -19,4 +19,8 @@ fn main() {
     let arr = vec![-15,4,6,8,35,673,74];
     println!("result: {:?}", arrays::smallest_in_array::largets_in_array(arr));
 
+    let mut arr = vec![1,2,3,4,5];
+    arrays::smallest_in_array::change_array(&mut arr);
+    println!("{:?}", arr);
+
 }
