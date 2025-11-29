@@ -35,3 +35,34 @@ pub fn better_approach(arr: &mut Vec<i32>) -> i32 {
     }
     ans
 }
+
+pub fn optimize_approach(arr: Vec<i32>) -> i32 {
+    let mut ans = 0;
+    let mut freq = 0; 
+
+    for i in 0..arr.len() {
+        if freq == 0 {
+            ans = arr[i];
+            freq +=1;
+        }
+        if arr[i] == ans {
+            freq += 1;
+        } else {
+            freq -=1;
+        }
+    }
+
+    let mut count = 0 ;
+    for i in 0..arr.len() {
+        if arr[i] == ans {
+            count += 1;
+        }
+    }
+
+    if count > arr.len()/2 {
+        return ans
+    } else {
+        -1
+    }
+
+}

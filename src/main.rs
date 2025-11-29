@@ -58,5 +58,9 @@ fn main() {
     let mut arr = vec![1,2,1,1];
     println!("result: {:?}", arrays::majority_element::better_approach(&mut arr));
 
+    // majority element optimize approach Moores algo
+    let mut arr = vec![1,2,1,1];
+    println!("result: {:?}", arrays::majority_element::optimize_approach(arr));
+
 
 }
