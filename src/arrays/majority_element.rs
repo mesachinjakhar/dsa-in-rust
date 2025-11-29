@@ -43,7 +43,6 @@ pub fn optimize_approach(arr: Vec<i32>) -> i32 {
     for i in 0..arr.len() {
         if freq == 0 {
             ans = arr[i];
-            freq +=1;
         }
         if arr[i] == ans {
             freq += 1;
