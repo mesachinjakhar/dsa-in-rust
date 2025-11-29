@@ -29,10 +29,14 @@ fn main() {
     arrays::reverse_array::reverse_array(&mut arr);
     println!("{:?}", arr);
 
-    // single number
+    // single number brute force
     let arr = vec![4,1,2,1,2];
     println!("result: {:?}", arrays::single_number::brute_force(arr));
 
+
+    // single number optimize approach
+    let arr = vec![4,1,2,1,2];
+    println!("result: {:?}", arrays::single_number::optimize_approach(arr));
 
 
 }
