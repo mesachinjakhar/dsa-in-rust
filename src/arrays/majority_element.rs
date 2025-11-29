@@ -13,3 +13,25 @@ pub fn brute_force(arr: Vec<i32>) -> i32 {
 
     0
 }
+
+pub fn better_approach(arr: &mut Vec<i32>) -> i32 {
+    let n = arr.len();
+
+    arr.sort();
+    let mut freq= 1;
+    let mut ans = arr[0];
+
+    for i in 1..n {
+        if arr[i] == arr[i - 1] {
+            freq += 1;
+        } else {
+            ans = arr[i];
+            freq = 1;
+        }
+
+        if freq > n/2 {
+            return ans
+        }
+    }
+    ans
+}

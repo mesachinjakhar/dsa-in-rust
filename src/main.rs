@@ -54,5 +54,9 @@ fn main() {
     let arr = vec![1,2,1,1];
     println!("result: {:?}", arrays::majority_element::brute_force(arr));
 
+    // majority element better approach
+    let mut arr = vec![1,2,1,1];
+    println!("result: {:?}", arrays::majority_element::better_approach(&mut arr));
+
 
 }
