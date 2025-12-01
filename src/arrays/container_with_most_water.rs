@@ -16,3 +16,29 @@ pub fn brute_force(heights: Vec<i32>) -> i32 {
 
     max_water
 }
+
+pub fn optimize_approach(heights: Vec<i32>) -> i32 {
+    let mut left = 0 as usize;
+    let mut right = heights.len() - 1; 
+
+    let mut max_water = 0;
+
+    while left < right {
+        let width = right - left;
+        let height = min(heights[left], heights[right]);
+
+        let curr_water = width * height as usize;
+
+        max_water = max(curr_water, max_water);
+
+        if heights[left] < heights[right] {
+            left += 1;
+        } else {
+            right -= 1;
+        }
+
+    }
+
+    max_water as i32
+
+}
