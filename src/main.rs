@@ -67,5 +67,8 @@ fn main() {
      let mut arr = vec![7,1,5,3,6,4];
     println!("result: {:?}", arrays::buy_sell_stock::brute_force(arr));
 
+    let mut arr = vec![1,8,6,2,5,4,8,3,7];
+    println!("result: {:?}", arrays::container_with_most_water::brute_force(arr));
+
 
 }
