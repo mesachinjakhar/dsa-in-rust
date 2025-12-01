@@ -12,3 +12,4 @@ pub fn brute_force(nums: Vec<i32>) -> i32 {
     }
     return max;
 }
+

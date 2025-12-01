@@ -10,7 +10,6 @@ pub fn brute_force(arr: Vec<i32>) -> i32 {
             return arr[i];
         }
     }
-
     0
 }
 

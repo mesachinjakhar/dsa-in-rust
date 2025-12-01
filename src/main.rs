@@ -62,5 +62,8 @@ fn main() {
     let mut arr = vec![1,2,1,1];
     println!("result: {:?}", arrays::majority_element::optimize_approach(arr));
 
+    let mut arr = vec![7,1,5,3,6,4];
+    println!("result: {:?}", arrays::buy_sell_stock::optimize_approach(arr));
+
 
 }

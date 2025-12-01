@@ -5,3 +5,4 @@ pub mod single_number;
 pub mod maximum_subarray;
 pub mod pair_sum;
 pub mod majority_element;
+pub mod buy_sell_stock;
