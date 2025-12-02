@@ -13,13 +13,11 @@ fn is_valid(arr: &Vec<i32>, mid: i32, m: i32) -> bool {
             pages = arr[i];
         }
     }
-
     if stu <= m {
         return  true;
     } else {
         return false;
     }
-
 }
 
 pub fn optimize_approach(arr: Vec<i32>, m: i32) -> i32 {
@@ -32,6 +30,10 @@ pub fn optimize_approach(arr: Vec<i32>, m: i32) -> i32 {
     let mut st = 0;
     let mut end = sum;
     let mut ans = 0;
+
+    if m > arr.len() as i32 {
+        return - 1;
+    }
 
     while st <= end {
         let mid = st + (end - st)/2;
