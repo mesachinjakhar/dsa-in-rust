@@ -16,3 +16,22 @@ pub fn binary_search(arr: Vec<i32>, tar: i32) -> Option<i32> {
 
     return None
 }
+
+pub fn recursion(arr: &Vec<i32>, tar: i32, st: usize, end: usize) -> i32 {
+
+    while st <=end {
+        let mid = st + (end - st)/2;
+        if arr[mid] < tar {
+            return recursion(arr, tar, mid+ 1, end)
+        }
+        if arr[mid] > tar {
+            return recursion(arr, tar, st, mid - 1);
+        }
+        if arr[mid] == tar {
+            return mid as i32;
+        }
+    }
+
+    return -1
+
+}
