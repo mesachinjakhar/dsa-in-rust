@@ -95,6 +95,16 @@ fn main() {
             let mut arr = vec![1,2,5,4];
     println!("result: {:?}", binary_search::peak_index_in_montain_array::optimize_approach(arr));
 
+    let mut arr = vec![2,2,4,4,5,6,6];
+    println!("result: {:?}", binary_search::single_element_in_sorted_array::brute_force(arr));
+
+        let mut arr = vec![2,2,4,4,5,6,6];
+    println!("result: {:?}", binary_search::single_element_in_sorted_array::optimize_approach(arr));
+
+    let mut arr = vec![2,1,3,4];
+    println!("result: {:?}", binary_search::book_allocation::optimize_approach(arr, 2));
+
+
 
 
 
