@@ -7,3 +7,4 @@ pub mod pair_sum;
 pub mod majority_element;
 pub mod buy_sell_stock;
 pub mod container_with_most_water;
+pub mod product_of_array_except_self;

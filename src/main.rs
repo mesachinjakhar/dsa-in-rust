@@ -72,5 +72,8 @@ fn main() {
         let mut arr = vec![1,8,6,2,5,4,8,3,7];
     println!("result: {:?}", arrays::container_with_most_water::optimize_approach(arr));
 
+    let mut arr = vec![1,2,3,4];
+    println!("result: {:?}", arrays::product_of_array_except_self::brute_force(arr));
+
 
 }
