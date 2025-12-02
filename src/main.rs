@@ -90,6 +90,9 @@ fn main() {
     let mut arr = vec![1,2,3,4];
     println!("result: {:?}", binary_search::search_in_roated_sorted_array::optimize_approach(arr, 3));
 
+        let mut arr = vec![1,2,5,4];
+    println!("result: {:?}", binary_search::peak_index_in_montain_array::brute_force(arr));
+
 
 
 
