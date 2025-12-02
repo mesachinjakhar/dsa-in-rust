@@ -81,11 +81,14 @@ fn main() {
 
 
 
-    let mut arr = vec![1,2,3,4];
-    println!("result: {:?}", binary_search::binary_search::binary_search(arr, 3));
+    // let mut arr = vec![1,2,3,4];
+    // println!("result: {:?}", binary_search::binary_search::binary_search(arr, 3));
 
-        let mut arr = vec![1,2,3,4];
-    println!("result: {:?}", binary_search::binary_search::recursion(&arr, 3, 0, 3));
+    //     let mut arr = vec![1,2,3,4];
+    // println!("result: {:?}", binary_search::binary_search::recursion(&arr, 3, 0, 3));
+
+    let mut arr = vec![1,2,3,4];
+    println!("result: {:?}", binary_search::search_in_roated_sorted_array::optimize_approach(arr, 3));
 
 
 
