@@ -76,4 +76,8 @@ fn main() {
     println!("result: {:?}", arrays::product_of_array_except_self::brute_force(arr));
 
 
+    let mut arr = vec![1,2,3,4];
+    println!("result: {:?}", arrays::product_of_array_except_self::optimize_approach(arr));
+
+
 }
