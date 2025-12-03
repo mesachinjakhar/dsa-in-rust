@@ -104,6 +104,9 @@ fn main() {
     let mut arr = vec![2,1,3,4];
     println!("result: {:?}", binary_search::book_allocation::optimize_approach(arr, 2));
 
+    let mut arr = vec![40,30,10,20];
+    println!("result: {:?}", binary_search::painters_partition::optimize_approach(arr, 2));
+
 
 
 
