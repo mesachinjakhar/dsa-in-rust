@@ -114,6 +114,9 @@ fn main() {
     let mut arr = vec![1,2,8,4,9];
     println!("result: {:?}", sorting::bubble_sort::optimize_approach(&mut arr));
 
+    let mut arr = vec![1,2,8,4,9];
+    println!("result: {:?}", sorting::selection_sort::optimize_approach(&mut arr));
+
 
 
 
