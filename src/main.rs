@@ -117,6 +117,8 @@ fn main() {
     let mut arr = vec![1,2,8,4,9];
     println!("result: {:?}", sorting::selection_sort::optimize_approach(&mut arr));
 
+    let mut arr = vec![1,2,8,4,9];
+    println!("result: {:?}", sorting::insertion_sort::optimize_approach(&mut arr));
 
 
 
