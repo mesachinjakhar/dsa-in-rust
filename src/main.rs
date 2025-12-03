@@ -1,6 +1,7 @@
 mod stack;
 mod arrays;
 mod binary_search;
+mod sorting;
 fn main() {
 
     // println!("result {}", stack::valid_parentheses::valid_parentheses("{{{}}".to_string()));
@@ -106,6 +107,12 @@ fn main() {
 
     let mut arr = vec![40,30,10,20];
     println!("result: {:?}", binary_search::painters_partition::optimize_approach(arr, 2));
+
+    let mut arr = vec![1,2,8,4,9];
+    println!("result: {:?}", binary_search::aggresive_cow::optimize_approach(&mut arr, 3));
+
+    let mut arr = vec![1,2,8,4,9];
+    println!("result: {:?}", sorting::bubble_sort::optimize_approach(&mut arr));
 
 
 
