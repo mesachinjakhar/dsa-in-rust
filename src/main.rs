@@ -164,6 +164,9 @@ fn main() {
     let mut tow_d_arr = vec![vec![1,2,3], vec![4,5,6], vec![7,8,9]];
     println!("{:?}",two_d_arrays::maximum_col_sum::brute_force(tow_d_arr, rows, column));
 
+    let mut tow_d_arr = vec![vec![1,2,3], vec![4,5,6], vec![7,8,9]];
+    println!("{}",two_d_arrays::diagonal_sum::brute_force(tow_d_arr, rows, column));
+
 
 
 }
