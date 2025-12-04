@@ -137,5 +137,10 @@ fn main() {
     let s = "Sachin".to_string();
     println!("{}", strings::reverse_string::brute_force(s));
 
+    let s = "TenEt".to_string();
+    println!("{}", strings::is_palindrome::brute_force(s));
+
+
+
 
 }
