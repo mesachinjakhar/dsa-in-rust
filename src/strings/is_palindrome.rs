@@ -1,6 +1,6 @@
 pub fn brute_force(s: String) -> bool {
     let s1 = s.to_lowercase();
-    let mut chars: Vec<char> = s1.chars().collect();
+    let mut chars: Vec<char> = s1.chars().filter(|c| c.is_alphanumeric()).collect();
 
     let mut st = 0;
     let mut end = chars.len() - 1; 
