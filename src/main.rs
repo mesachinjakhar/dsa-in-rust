@@ -128,5 +128,9 @@ fn main() {
     println!("result: {:?}", sorting::merge_2_sorted_array::optimize_approach(&mut arr, arr2, 4,  3));
     println!("{:?}", arr);
 
+    let mut arr = vec![4,5,6];
+    println!("result: {:?}", sorting::next_permutation::optimize_approach(&mut arr));
+    println!("{:?}", arr);
+
 
 }
