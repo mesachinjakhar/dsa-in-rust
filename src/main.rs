@@ -90,52 +90,52 @@ fn main() {
     //     let mut arr = vec![1,2,3,4];
     // println!("result: {:?}", binary_search::binary_search::recursion(&arr, 3, 0, 3));
 
-    let mut arr = vec![1,2,3,4];
-    println!("result: {:?}", binary_search::search_in_roated_sorted_array::optimize_approach(arr, 3));
+    // let mut arr = vec![1,2,3,4];
+    // println!("result: {:?}", binary_search::search_in_roated_sorted_array::optimize_approach(arr, 3));
 
-        let mut arr = vec![1,2,5,4];
-    println!("result: {:?}", binary_search::peak_index_in_montain_array::brute_force(arr));
-            let mut arr = vec![1,2,5,4];
-    println!("result: {:?}", binary_search::peak_index_in_montain_array::optimize_approach(arr));
+    //     let mut arr = vec![1,2,5,4];
+    // println!("result: {:?}", binary_search::peak_index_in_montain_array::brute_force(arr));
+    //         let mut arr = vec![1,2,5,4];
+    // println!("result: {:?}", binary_search::peak_index_in_montain_array::optimize_approach(arr));
 
-    let mut arr = vec![2,2,4,4,5,6,6];
-    println!("result: {:?}", binary_search::single_element_in_sorted_array::brute_force(arr));
+    // let mut arr = vec![2,2,4,4,5,6,6];
+    // println!("result: {:?}", binary_search::single_element_in_sorted_array::brute_force(arr));
 
-        let mut arr = vec![2,2,4,4,5,6,6];
-    println!("result: {:?}", binary_search::single_element_in_sorted_array::optimize_approach(arr));
+    //     let mut arr = vec![2,2,4,4,5,6,6];
+    // println!("result: {:?}", binary_search::single_element_in_sorted_array::optimize_approach(arr));
 
-    let mut arr = vec![2,1,3,4];
-    println!("result: {:?}", binary_search::book_allocation::optimize_approach(arr, 2));
+    // let mut arr = vec![2,1,3,4];
+    // println!("result: {:?}", binary_search::book_allocation::optimize_approach(arr, 2));
 
-    let mut arr = vec![40,30,10,20];
-    println!("result: {:?}", binary_search::painters_partition::optimize_approach(arr, 2));
+    // let mut arr = vec![40,30,10,20];
+    // println!("result: {:?}", binary_search::painters_partition::optimize_approach(arr, 2));
 
-    let mut arr = vec![1,2,8,4,9];
-    println!("result: {:?}", binary_search::aggresive_cow::optimize_approach(&mut arr, 3));
+    // let mut arr = vec![1,2,8,4,9];
+    // println!("result: {:?}", binary_search::aggresive_cow::optimize_approach(&mut arr, 3));
 
-    let mut arr = vec![1,2,8,4,9];
-    println!("result: {:?}", sorting::bubble_sort::optimize_approach(&mut arr));
+    // let mut arr = vec![1,2,8,4,9];
+    // println!("result: {:?}", sorting::bubble_sort::optimize_approach(&mut arr));
 
-    let mut arr = vec![1,2,8,4,9];
-    println!("result: {:?}", sorting::selection_sort::optimize_approach(&mut arr));
+    // let mut arr = vec![1,2,8,4,9];
+    // println!("result: {:?}", sorting::selection_sort::optimize_approach(&mut arr));
 
-    let mut arr = vec![1,2,8,4,9];
-    println!("result: {:?}", sorting::insertion_sort::optimize_approach(&mut arr));
+    // let mut arr = vec![1,2,8,4,9];
+    // println!("result: {:?}", sorting::insertion_sort::optimize_approach(&mut arr));
 
-    let mut arr = vec![1,0,0,2,2,0,1,1,2];
-    println!("result: {:?}", sorting::sort_0_1_and_2::optimize_approach(&mut arr));
+    // let mut arr = vec![1,0,0,2,2,0,1,1,2];
+    // println!("result: {:?}", sorting::sort_0_1_and_2::optimize_approach(&mut arr));
 
-    let mut arr = vec![1,2,3,4,0,0,0];
-    let mut arr2 = vec![4,5,6];
-    println!("result: {:?}", sorting::merge_2_sorted_array::optimize_approach(&mut arr, arr2, 4,  3));
-    println!("{:?}", arr);
+    // let mut arr = vec![1,2,3,4,0,0,0];
+    // let mut arr2 = vec![4,5,6];
+    // println!("result: {:?}", sorting::merge_2_sorted_array::optimize_approach(&mut arr, arr2, 4,  3));
+    // println!("{:?}", arr);
 
-    let mut arr = vec![4,5,6];
-    println!("result: {:?}", sorting::next_permutation::optimize_approach(&mut arr));
-    println!("{:?}", arr);
+    // let mut arr = vec![4,5,6];
+    // println!("result: {:?}", sorting::next_permutation::optimize_approach(&mut arr));
+    // println!("{:?}", arr);
 
-    let s = "Sachin".to_string();
-    println!("{}", strings::reverse_string::brute_force(s));
+    // let s = "Sachin".to_string();
+    // println!("{}", strings::reverse_string::brute_force(s));
 
     let s = "TenEt".to_string();
     println!("{}", strings::is_palindrome::brute_force(s));
