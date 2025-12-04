@@ -156,7 +156,14 @@ fn main() {
     let mut tow_d_arr = vec![vec![1,2,3], vec![4,5,6], vec![7,8,9]];
     let mut rows = 3;
     let mut column = 3;
-    two_d_arrays::linear_search::optimize_approach(tow_d_arr, rows, column);
+    println!("{:?}",two_d_arrays::linear_search::optimize_approach(tow_d_arr, rows, column, 8));
+
+    let mut tow_d_arr = vec![vec![1,2,3], vec![4,5,6], vec![7,8,9]];
+    println!("{:?}",two_d_arrays::maximum_row_sum::brute_force(tow_d_arr, rows, column));
+
+    let mut tow_d_arr = vec![vec![1,2,3], vec![4,5,6], vec![7,8,9]];
+    println!("{:?}",two_d_arrays::maximum_col_sum::brute_force(tow_d_arr, rows, column));
+
 
 
 }
