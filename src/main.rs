@@ -1,3 +1,5 @@
+use dsa_in_rust::strings;
+
 mod stack;
 mod arrays;
 mod binary_search;
@@ -131,6 +133,9 @@ fn main() {
     let mut arr = vec![4,5,6];
     println!("result: {:?}", sorting::next_permutation::optimize_approach(&mut arr));
     println!("{:?}", arr);
+
+    let s = "Sachin".to_string();
+    println!("{}", strings::reverse_string::brute_force(s));
 
 
 }
