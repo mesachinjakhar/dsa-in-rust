@@ -123,8 +123,10 @@ fn main() {
     let mut arr = vec![1,0,0,2,2,0,1,1,2];
     println!("result: {:?}", sorting::sort_0_1_and_2::optimize_approach(&mut arr));
 
-
-
+    let mut arr = vec![1,2,3,4,0,0,0];
+    let mut arr2 = vec![4,5,6];
+    println!("result: {:?}", sorting::merge_2_sorted_array::optimize_approach(&mut arr, arr2, 4,  3));
+    println!("{:?}", arr);
 
 
 }
