@@ -137,10 +137,13 @@ fn main() {
     // let s = "Sachin".to_string();
     // println!("{}", strings::reverse_string::brute_force(s));
 
-    let s = "TenE$t".to_string();
-    println!("{}", strings::is_palindrome::brute_force(s));
+    // let s = "TenE$t".to_string();
+    // println!("{}", strings::is_palindrome::brute_force(s));
 
+    let s1 = "ab".to_string();
+    let s2 = "djasjbairkdt".to_string();
 
+    println!("{}", strings::permutation_in_string::optimize_approach(s1, s2));
 
 
 }
