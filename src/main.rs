@@ -175,7 +175,7 @@ fn main() {
     println!("{:?}",two_d_arrays::spiral_matrix::optimize_approach(tow_d_arr));
 
     let mut arr = vec![2,4,5,10];
-    println!("{:?}", hashing::two_sum::brute_force(arr, 9))
+    println!("{:?}", hashing::two_sum::better_approach(&mut arr, 9))
 
 
 
