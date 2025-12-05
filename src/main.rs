@@ -180,6 +180,12 @@ fn main() {
     let mut arr = vec![vec![1,2,3], vec![4,9,6], vec![7,8,9]];
     println!("{:?}", hashing::find_missing_repeating_values::optimize_approach(arr));
 
+    let mut arr = vec![1,2,3,4,3,2];
+    println!("{}", hashing::find_duplicates::optimize_approach(arr));
+
+    let mut arr = vec![1,0,-1,2,-1,2];
+    println!("{:?}", hashing::three_sum::optimize_approach(arr));
+
 
 
 }
