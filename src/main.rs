@@ -5,6 +5,7 @@ mod arrays;
 mod binary_search;
 mod sorting;
 mod two_d_arrays;
+mod hashing;
 fn main() {
 
     // println!("result {}", stack::valid_parentheses::valid_parentheses("{{{}}".to_string()));
@@ -141,31 +142,40 @@ fn main() {
     // let s = "TenE$t".to_string();
     // println!("{}", strings::is_palindrome::brute_force(s));
 
-    let s1 = "ab".to_string();
-    let s2 = "djasjbairkdt".to_string();
+    // let s1 = "ab".to_string();
+    // let s2 = "djasjbairkdt".to_string();
 
-    println!("{}", strings::permutation_in_string::optimize_approach(s1, s2));
+    // println!("{}", strings::permutation_in_string::optimize_approach(s1, s2));
 
 
-    let s2 = "hello world".to_string();
-    println!("{}", strings::reverse_words_in_string::optimize_approach(s2));
+    // let s2 = "hello world".to_string();
+    // println!("{}", strings::reverse_words_in_string::optimize_approach(s2));
 
-    let mut arr = vec!['a','a','b','b','c','c','c'];
-    println!("{}", strings::compress_string::optimize_approach(&mut arr));
+    // let mut arr = vec!['a','a','b','b','c','c','c'];
+    // println!("{}", strings::compress_string::optimize_approach(&mut arr));
+
+    // let mut tow_d_arr = vec![vec![1,2,3], vec![4,5,6], vec![7,8,9]];
+    // let mut rows = 3;
+    // let mut column = 3;
+    // println!("{:?}",two_d_arrays::linear_search::optimize_approach(tow_d_arr, rows, column, 8));
+
+    // let mut tow_d_arr = vec![vec![1,2,3], vec![4,5,6], vec![7,8,9]];
+    // println!("{:?}",two_d_arrays::maximum_row_sum::brute_force(tow_d_arr, rows, column));
+
+    // let mut tow_d_arr = vec![vec![1,2,3], vec![4,5,6], vec![7,8,9]];
+    // println!("{:?}",two_d_arrays::maximum_col_sum::brute_force(tow_d_arr, rows, column));
+
+    // let mut tow_d_arr = vec![vec![1,2,3], vec![4,5,6], vec![7,8,9]];
+    // println!("{}",two_d_arrays::diagonal_sum::optimize_approach(tow_d_arr, rows, column));
+
+    // let mut tow_d_arr = vec![vec![1,2,3], vec![4,5,6], vec![7,8,9]];
+    // println!("{:?}",two_d_arrays::search_in_2d_array::optimize_approach(tow_d_arr, 8));
 
     let mut tow_d_arr = vec![vec![1,2,3], vec![4,5,6], vec![7,8,9]];
-    let mut rows = 3;
-    let mut column = 3;
-    println!("{:?}",two_d_arrays::linear_search::optimize_approach(tow_d_arr, rows, column, 8));
+    println!("{:?}",two_d_arrays::spiral_matrix::optimize_approach(tow_d_arr));
 
-    let mut tow_d_arr = vec![vec![1,2,3], vec![4,5,6], vec![7,8,9]];
-    println!("{:?}",two_d_arrays::maximum_row_sum::brute_force(tow_d_arr, rows, column));
-
-    let mut tow_d_arr = vec![vec![1,2,3], vec![4,5,6], vec![7,8,9]];
-    println!("{:?}",two_d_arrays::maximum_col_sum::brute_force(tow_d_arr, rows, column));
-
-    let mut tow_d_arr = vec![vec![1,2,3], vec![4,5,6], vec![7,8,9]];
-    println!("{}",two_d_arrays::diagonal_sum::brute_force_2(tow_d_arr, rows, column));
+    let mut arr = vec![2,4,5,10];
+    println!("{:?}", hashing::two_sum::brute_force(arr, 9))
 
 
 
