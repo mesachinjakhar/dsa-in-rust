@@ -175,7 +175,10 @@ fn main() {
     println!("{:?}",two_d_arrays::spiral_matrix::optimize_approach(tow_d_arr));
 
     let mut arr = vec![2,4,5,10];
-    println!("{:?}", hashing::two_sum::optimize_approach(&mut arr, 9))
+    println!("{:?}", hashing::two_sum::optimize_approach(&mut arr, 9));
+
+    let mut arr = vec![vec![1,2,3], vec![4,9,6], vec![7,8,9]];
+    println!("{:?}", hashing::find_missing_repeating_values::optimize_approach(arr));
 
 
 
