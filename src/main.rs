@@ -6,6 +6,7 @@ mod binary_search;
 mod sorting;
 mod two_d_arrays;
 mod hashing;
+mod recursion;
 fn main() {
 
     // println!("result {}", stack::valid_parentheses::valid_parentheses("{{{}}".to_string()));
@@ -183,9 +184,19 @@ fn main() {
     // let mut arr = vec![1,2,3,4,3,2];
     // println!("{}", hashing::find_duplicates::optimize_approach(arr));
 
-    let mut arr = vec![1,0,-1,2,-1,2];
-    println!("{:?}", hashing::three_sum::optimize_approach(&mut arr));
+    // let mut arr = vec![1,0,-1,2,-1,2];
+    // println!("{:?}", hashing::three_sum::optimize_approach(&mut arr));
 
+    // let mut arr = vec![-2,-1,-1,1,1,2,2];
+    // println!("{:?}", hashing::four_sum::optimize_approach(&mut arr, 0));
+
+    // let mut arr = vec![9,4,20,3,10,5];
+    // println!("{:?}", hashing::subarray_sum_equals_k::optimize_approach(arr, 33));
+
+    // recursion 
+
+    let n = 5;
+    recursion::print_to_n::optimize_approach(n);
 
 
 }
