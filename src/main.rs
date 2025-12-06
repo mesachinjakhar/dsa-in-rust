@@ -205,7 +205,8 @@ fn main() {
     println!("{}",recursion
     ::fibnacci::optimize_approach(6));
 
-    
+    let arr = vec![1,2,3,4,5];
+    println!("{}", recursion::is_array_sorted::optimize_approach(arr, 0));
 
 
 }
