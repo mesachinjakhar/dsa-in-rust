@@ -201,6 +201,10 @@ fn main() {
 
     println!("{}",recursion
     ::sum_of_n::optimize_approach(5));
+
+    println!("{}",recursion
+    ::fibnacci::optimize_approach(6));
+
     
 
 
