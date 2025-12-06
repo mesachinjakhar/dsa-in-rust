@@ -171,20 +171,20 @@ fn main() {
     // let mut tow_d_arr = vec![vec![1,2,3], vec![4,5,6], vec![7,8,9]];
     // println!("{:?}",two_d_arrays::search_in_2d_array::optimize_approach(tow_d_arr, 8));
 
-    let mut tow_d_arr = vec![vec![1,2,3], vec![4,5,6], vec![7,8,9]];
-    println!("{:?}",two_d_arrays::spiral_matrix::optimize_approach(tow_d_arr));
+    // let mut tow_d_arr = vec![vec![1,2,3], vec![4,5,6], vec![7,8,9]];
+    // println!("{:?}",two_d_arrays::spiral_matrix::optimize_approach(tow_d_arr));
 
-    let mut arr = vec![2,4,5,10];
-    println!("{:?}", hashing::two_sum::optimize_approach(&mut arr, 9));
+    // let mut arr = vec![2,4,5,10];
+    // println!("{:?}", hashing::two_sum::optimize_approach(&mut arr, 9));
 
-    let mut arr = vec![vec![1,2,3], vec![4,9,6], vec![7,8,9]];
-    println!("{:?}", hashing::find_missing_repeating_values::optimize_approach(arr));
+    // let mut arr = vec![vec![1,2,3], vec![4,9,6], vec![7,8,9]];
+    // println!("{:?}", hashing::find_missing_repeating_values::optimize_approach(arr));
 
-    let mut arr = vec![1,2,3,4,3,2];
-    println!("{}", hashing::find_duplicates::optimize_approach(arr));
+    // let mut arr = vec![1,2,3,4,3,2];
+    // println!("{}", hashing::find_duplicates::optimize_approach(arr));
 
     let mut arr = vec![1,0,-1,2,-1,2];
-    println!("{:?}", hashing::three_sum::optimize_approach(arr));
+    println!("{:?}", hashing::three_sum::optimize_approach(&mut arr));
 
 
 
