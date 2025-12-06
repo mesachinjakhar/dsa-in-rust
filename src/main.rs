@@ -198,6 +198,9 @@ fn main() {
     let n = 5;
     recursion::print_to_n::optimize_approach(n);
     println!("{}",recursion::factorial::optimize_approach(5));
+
+    println!("{}",recursion
+    ::sum_of_n::optimize_approach(5));
     
 
 
