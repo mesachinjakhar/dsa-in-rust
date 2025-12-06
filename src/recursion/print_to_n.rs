@@ -8,4 +8,6 @@ pub fn optimize_approach(n: i32) {
 
     optimize_approach(n - 1);
 
+    println!(" now backtracking with n: {}", n);
+
 }
