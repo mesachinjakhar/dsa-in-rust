@@ -203,10 +203,17 @@ fn main() {
     ::sum_of_n::optimize_approach(5));
 
     println!("{}",recursion
-    ::fibnacci::optimize_approach(6));
+    ::fibnacci::optimize_approach(4));
+
+    let arr = vec![1,2,3,20,5];
+    println!("{}", recursion::is_array_sorted::optimize_approach(&arr, 0));
 
     let arr = vec![1,2,3,4,5];
-    println!("{}", recursion::is_array_sorted::optimize_approach(arr, 0));
+    println!("{}", recursion::binary_search::optimize_approach(&arr, 0, 4, 4));
+
+    let arr = vec![1,2,3];
+    let mut ans: Vec<i32> = Vec::new();
+    recursion::print_all_subsets::optimize_approach(&arr, &mut ans, 0);
 
 
 }

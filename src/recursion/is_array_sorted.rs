@@ -1,4 +1,4 @@
-pub fn optimize_approach(arr: Vec<i32>, idx: usize) -> bool {
+pub fn optimize_approach(arr: &Vec<i32>, idx: usize) -> bool {
 
     // cases with answers
     if arr.len() == 1 {
