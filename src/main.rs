@@ -220,4 +220,7 @@ fn main() {
     let mut ans: Vec<i32> = Vec::new();
     recursion::print_all_subsets_2::optimize_approach(&arr, &mut ans, 0);
 
+    let mut arr = vec![1,2,3];
+    recursion::permutations::optimize_approach(&mut arr, 0);
+
 }
