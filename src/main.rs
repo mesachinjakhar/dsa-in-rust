@@ -195,25 +195,29 @@ fn main() {
 
     // recursion 
 
-    let n = 5;
-    recursion::print_to_n::optimize_approach(n);
-    println!("{}",recursion::factorial::optimize_approach(5));
+    // let n = 5;
+    // recursion::print_to_n::optimize_approach(n);
+    // println!("{}",recursion::factorial::optimize_approach(5));
 
-    println!("{}",recursion
-    ::sum_of_n::optimize_approach(5));
+    // println!("{}",recursion
+    // ::sum_of_n::optimize_approach(5));
 
-    println!("{}",recursion
-    ::fibnacci::optimize_approach(4));
+    // println!("{}",recursion
+    // ::fibnacci::optimize_approach(4));
 
-    let arr = vec![1,2,3,20,5];
-    println!("{}", recursion::is_array_sorted::optimize_approach(&arr, 0));
+    // let arr = vec![1,2,3,20,5];
+    // println!("{}", recursion::is_array_sorted::optimize_approach(&arr, 0));
 
-    let arr = vec![1,2,3,4,5];
-    println!("{}", recursion::binary_search::optimize_approach(&arr, 0, 4, 4));
+    // let arr = vec![1,2,3,4,5];
+    // println!("{}", recursion::binary_search::optimize_approach(&arr, 0, 4, 4));
 
-    let arr = vec![1,2,3];
+    // let arr = vec![1,2,2];
+    // let mut ans: Vec<i32> = Vec::new();
+    // recursion::print_all_subsets::optimize_approach(&arr, &mut ans, 0);
+
+
+    let arr = vec![1,2,2];
     let mut ans: Vec<i32> = Vec::new();
-    recursion::print_all_subsets::optimize_approach(&arr, &mut ans, 0);
-
+    recursion::print_all_subsets_2::optimize_approach(&arr, &mut ans, 0);
 
 }

@@ -5,3 +5,4 @@ pub mod fibnacci;
 pub mod is_array_sorted;
 pub mod binary_search;
 pub mod print_all_subsets;
+pub mod print_all_subsets_2;
