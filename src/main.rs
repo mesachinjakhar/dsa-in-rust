@@ -7,6 +7,21 @@ mod sorting;
 mod two_d_arrays;
 mod hashing;
 mod recursion;
+mod binary_tree;
+
+ #[derive(Debug)]
+    pub struct TreeNode {
+    val: i32,
+    left: Option<Box<TreeNode>>,
+    right: Option<Box<TreeNode>>,
+}
+
+    impl TreeNode {
+    // create new leaf node
+    pub fn new(val: i32) -> Self {
+        TreeNode { val: val, left: None, right:None }
+    }
+}
 fn main() {
 
     // println!("result {}", stack::valid_parentheses::valid_parentheses("{{{}}".to_string()));
@@ -216,11 +231,24 @@ fn main() {
     // recursion::print_all_subsets::optimize_approach(&arr, &mut ans, 0);
 
 
-    let arr = vec![1,2,2];
-    let mut ans: Vec<i32> = Vec::new();
-    recursion::print_all_subsets_2::optimize_approach(&arr, &mut ans, 0);
+    // let arr = vec![1,2,2];
+    // let mut ans: Vec<i32> = Vec::new();
+    // recursion::print_all_subsets_2::optimize_approach(&arr, &mut ans, 0);
 
-    let mut arr = vec![1,2,3];
-    recursion::permutations::optimize_approach(&mut arr, 0);
+    // let mut arr = vec![1,2,3];
+    // recursion::permutations::optimize_approach(&mut arr, 0);
+
+    // let mut arr = vec![vec!['.', '.', '.', '.'], vec!['.', '.', '.', '.'], vec!['.', '.', '.', '.'], vec!['.', '.', '.', '.']];
+    // let mut ans: Vec<Vec<Vec<char>>> = Vec::new();
+    // recursion::n_queens::optimize_approach(&mut arr, &mut ans, 0);
+    // println!("{:?}", ans);
+
+    let preorder = vec![1, 2, -1, -1, 3, 4, -1, -1, 5, -1,-1];
+
+    let mut index = 0; 
+
+    let tree = binary_tree::build_preorder::build_preorder(&preorder, &mut index);
+
+    println!("{:#?}", tree );
 
 }

@@ -7,3 +7,4 @@ pub mod binary_search;
 pub mod print_all_subsets;
 pub mod print_all_subsets_2;
 pub mod permutations;
+pub mod n_queens;

@@ -6,3 +6,4 @@ pub mod strings;
 pub mod two_d_arrays;
 pub mod hashing;
 pub mod recursion;
+pub mod binary_tree;
