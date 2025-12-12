@@ -261,4 +261,9 @@ fn main() {
     binary_tree::build_preorder::in_order(&tree1, &mut ans);
     println!("{:?}", ans);
 
+    let mut ans: Vec<i32> = Vec::new();
+
+    binary_tree::build_preorder::post_order(&tree1, &mut ans);
+    println!("{:?}", ans);
+
 }

@@ -49,8 +49,17 @@ pub fn pre_order(root: &Option<Box<TreeNode>>, ans: &mut Vec<i32>) {
 pub fn in_order(root: &Option<Box<TreeNode>>, ans: &mut Vec<i32>) {
     if let Some(node) = root {
 
-        pre_order(&node.left, ans);
+        in_order(&node.left, ans);
         ans.push(node.val);
-        pre_order(&node.right, ans);
+        in_order(&node.right, ans);
+    }
+}
+
+pub fn post_order(root: &Option<Box<TreeNode>>, ans: &mut Vec<i32>) {
+    if let Some(node) = root {
+
+        post_order(&node.left, ans);
+        post_order(&node.right, ans);
+        ans.push(node.val);
     }
 }
