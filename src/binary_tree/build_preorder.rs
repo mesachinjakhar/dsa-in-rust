@@ -33,3 +33,15 @@ pub fn build_preorder(preorder: & Vec<i32>, index: &mut usize) -> Option<Box<Tre
     Some(Box::new(node))
 
 }
+
+
+pub fn pre_order(root: &Option<Box<TreeNode>>, ans: &mut Vec<i32>) {
+    if let Some(node) = root {
+
+        ans.push(node.val);
+
+        pre_order(&node.left, ans);
+
+        pre_order(&node.right, ans);
+    }
+}

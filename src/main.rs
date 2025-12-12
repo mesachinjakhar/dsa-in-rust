@@ -247,8 +247,13 @@ fn main() {
 
     let mut index = 0; 
 
-    let tree = binary_tree::build_preorder::build_preorder(&preorder, &mut index);
+    let tree1 = binary_tree::build_preorder::build_preorder(&preorder, &mut index);
 
-    println!("{:#?}", tree );
+    // println!("{:#?}", tree1 );
+
+    let mut ans: Vec<i32> = Vec::new();
+
+    binary_tree::build_preorder::pre_order(&tree1, &mut ans);
+    println!("{:?}", ans);
 
 }
