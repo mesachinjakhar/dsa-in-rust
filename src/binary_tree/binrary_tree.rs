@@ -115,3 +115,17 @@ pub fn count(root: &Option<Box<TreeNode>>) -> i32 {
 
     return 0;
 }
+
+pub fn sum(root: &Option<Box<TreeNode>>) -> i32 {
+
+    if let Some(node) = root {
+         let val = node.val;
+         let left = sum(&node.left);
+         let right = sum(&node.right);
+
+         return val + left + right;
+
+    }
+
+    return 0;
+}

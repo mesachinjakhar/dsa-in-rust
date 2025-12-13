@@ -273,7 +273,8 @@ fn main() {
     println!("{:?}", ans);
 
     println!("height is: {}", binary_tree::binrary_tree::height(&tree1));
-    println!("count is: {}", binary_tree::binrary_tree::count(&tree1))
+    println!("count is: {}", binary_tree::binrary_tree::count(&tree1));
+        println!("sum is: {}", binary_tree::binrary_tree::sum(&tree1))
 
 
 
