@@ -90,13 +90,26 @@ pub fn level_order(root: &Option<Box<TreeNode>>, ans: &mut Vec<i32>) {
 
 }
 
-pub fn height(root: Option<Box<TreeNode>>) -> i32 {
+pub fn height(root: &Option<Box<TreeNode>>) -> i32 {
 
     if let Some(node) = root {
-         let left = height(node.left);
-         let right = height(node.right);
+         let left = height(&node.left);
+         let right = height(&node.right);
 
          return max(left, right) + 1;
+    
+    }
+
+    return 0;
+}
+
+pub fn count(root: &Option<Box<TreeNode>>) -> i32 {
+
+    if let Some(node) = root {
+         let left = count(&node.left);
+         let right = count(&node.right);
+
+         return left + right + 1;
     
     }
 

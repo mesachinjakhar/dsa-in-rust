@@ -272,7 +272,9 @@ fn main() {
     binary_tree::binrary_tree::level_order(&tree1, &mut ans);
     println!("{:?}", ans);
 
-    println!("height is: {}", binary_tree::binrary_tree::height(tree1))
+    println!("height is: {}", binary_tree::binrary_tree::height(&tree1));
+    println!("count is: {}", binary_tree::binrary_tree::count(&tree1))
+
 
 
 }
