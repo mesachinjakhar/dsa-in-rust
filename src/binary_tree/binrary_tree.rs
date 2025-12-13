@@ -1,4 +1,7 @@
- #[derive(Debug)]
+use std::{cmp::max, collections::VecDeque};
+
+
+#[derive(Debug)]
     pub struct TreeNode {
     val: i32,
     left: Option<Box<TreeNode>>,
@@ -12,7 +15,7 @@
     }
 }
 
-pub fn build_preorder(preorder: & Vec<i32>, index: &mut usize) -> Option<Box<TreeNode>> {
+pub fn binrary_tree(preorder: & Vec<i32>, index: &mut usize) -> Option<Box<TreeNode>> {
 
     if *index == preorder.len() {
         return None;
@@ -26,9 +29,9 @@ pub fn build_preorder(preorder: & Vec<i32>, index: &mut usize) -> Option<Box<Tre
 
     let mut node = TreeNode::new(val);
     *index += 1;
-    node.left = build_preorder(preorder, index);
+    node.left = binrary_tree(preorder, index);
     *index += 1;
-    node.right = build_preorder(preorder, index);
+    node.right = binrary_tree(preorder, index);
 
     Some(Box::new(node))
 
@@ -62,4 +65,40 @@ pub fn post_order(root: &Option<Box<TreeNode>>, ans: &mut Vec<i32>) {
         post_order(&node.right, ans);
         ans.push(node.val);
     }
+}
+
+pub fn level_order(root: &Option<Box<TreeNode>>, ans: &mut Vec<i32>) {
+    if root.is_none() {
+        return; 
+    }
+
+    let mut queue: VecDeque<&Box<TreeNode>> = VecDeque::new();
+    queue.push_back(root.as_ref().unwrap()); // extract as reference -> then unrwap the option so we get Box , without unwrap we will get Some
+
+    while let Some(node) = queue.pop_front() {
+        ans.push(node.val);
+
+        if let Some(left) = &node.left {
+            queue.push_back(left);
+        }
+
+        if let Some(right) = &node.right {
+            queue.push_back(right);
+        }
+
+    }
+
+}
+
+pub fn height(root: Option<Box<TreeNode>>) -> i32 {
+
+    if let Some(node) = root {
+         let left = height(node.left);
+         let right = height(node.right);
+
+         return max(left, right) + 1;
+    
+    }
+
+    return 0;
 }

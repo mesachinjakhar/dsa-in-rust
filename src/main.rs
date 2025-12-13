@@ -247,23 +247,32 @@ fn main() {
 
     let mut index = 0; 
 
-    let tree1 = binary_tree::build_preorder::build_preorder(&preorder, &mut index);
+    let tree1 = binary_tree::binrary_tree::binrary_tree(&preorder, &mut index);
 
     // println!("{:#?}", tree1 );
 
     let mut ans: Vec<i32> = Vec::new();
 
-    binary_tree::build_preorder::pre_order(&tree1, &mut ans);
+    binary_tree::binrary_tree::pre_order(&tree1, &mut ans);
     println!("{:?}", ans);
 
         let mut ans: Vec<i32> = Vec::new();
 
-    binary_tree::build_preorder::in_order(&tree1, &mut ans);
+    binary_tree::binrary_tree::in_order(&tree1, &mut ans);
     println!("{:?}", ans);
 
     let mut ans: Vec<i32> = Vec::new();
 
-    binary_tree::build_preorder::post_order(&tree1, &mut ans);
+    binary_tree::binrary_tree::post_order(&tree1, &mut ans);
     println!("{:?}", ans);
+
+
+    let mut ans: Vec<i32> = Vec::new();
+
+    binary_tree::binrary_tree::level_order(&tree1, &mut ans);
+    println!("{:?}", ans);
+
+    println!("height is: {}", binary_tree::binrary_tree::height(tree1))
+
 
 }
