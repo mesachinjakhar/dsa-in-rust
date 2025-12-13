@@ -7,3 +7,4 @@ pub mod two_d_arrays;
 pub mod hashing;
 pub mod recursion;
 pub mod binary_tree;
+pub mod linked_list;

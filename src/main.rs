@@ -8,6 +8,7 @@ mod two_d_arrays;
 mod hashing;
 mod recursion;
 mod binary_tree;
+mod linked_list;
 
  #[derive(Debug)]
     pub struct TreeNode {
@@ -256,7 +257,7 @@ fn main() {
     binary_tree::binrary_tree::pre_order(&tree1, &mut ans);
     println!("{:?}", ans);
 
-        let mut ans: Vec<i32> = Vec::new();
+    let mut ans: Vec<i32> = Vec::new();
 
     binary_tree::binrary_tree::in_order(&tree1, &mut ans);
     println!("{:?}", ans);
@@ -274,7 +275,9 @@ fn main() {
 
     println!("height is: {}", binary_tree::binrary_tree::height(&tree1));
     println!("count is: {}", binary_tree::binrary_tree::count(&tree1));
-        println!("sum is: {}", binary_tree::binrary_tree::sum(&tree1))
+    println!("sum is: {}", binary_tree::binrary_tree::sum(&tree1));
+
+    
 
 
 
