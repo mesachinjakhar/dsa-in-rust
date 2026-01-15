@@ -17,7 +17,6 @@ pub fn optimize_approach(head: Option<Box<Node>>) -> bool {
                 return true;
             }
         }
-
     }
 
     false

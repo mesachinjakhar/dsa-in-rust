@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 
 pub fn greater_element(list1: Vec<i32> ,list2: Vec<i32> ) -> Vec<i32> {
-    let n = list2.len(); 
+    let n: usize = list2.len(); 
     let mut stack: Vec<i32> = Vec::with_capacity(n);
     let mut ans: Vec<i32> = Vec::with_capacity(n);
     let mut map: HashMap<i32, i32> = HashMap::new();

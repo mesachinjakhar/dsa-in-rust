@@ -244,7 +244,7 @@ fn main() {
     // recursion::n_queens::optimize_approach(&mut arr, &mut ans, 0);
     // println!("{:?}", ans);
 
-    let preorder = vec![1, 2, -1, -1, 3, 4, -1, -1, 5, -1,-1];
+    let preorder: Vec<i32> = vec![1, 2, -1, -1, 3, 4, -1, -1, 5, -1,-1];
 
     let mut index = 0; 
 
@@ -252,15 +252,15 @@ fn main() {
 
     // println!("{:#?}", tree1 );
 
-    let mut ans: Vec<i32> = Vec::new();
+    // let mut ans: Vec<i32> = Vec::new();
 
-    binary_tree::binrary_tree::pre_order(&tree1, &mut ans);
-    println!("{:?}", ans);
+    // binary_tree::binrary_tree::pre_order(&tree1, &mut ans);
+    // println!("{:?}", ans);
 
-    let mut ans: Vec<i32> = Vec::new();
+    // let mut ans: Vec<i32> = Vec::new();
 
-    binary_tree::binrary_tree::in_order(&tree1, &mut ans);
-    println!("{:?}", ans);
+    // binary_tree::binrary_tree::in_order(&tree1, &mut ans);
+    // println!("{:?}", ans);
 
     let mut ans: Vec<i32> = Vec::new();
 
@@ -273,11 +273,9 @@ fn main() {
     binary_tree::binrary_tree::level_order(&tree1, &mut ans);
     println!("{:?}", ans);
 
-    println!("height is: {}", binary_tree::binrary_tree::height(&tree1));
-    println!("count is: {}", binary_tree::binrary_tree::count(&tree1));
-    println!("sum is: {}", binary_tree::binrary_tree::sum(&tree1));
-
-    
+    // println!("height is: {}", binary_tree::binrary_tree::height(&tree1));
+    // println!("count is: {}", binary_tree::binrary_tree::count(&tree1));
+    // println!("sum is: {}", binary_tree::binrary_tree::sum(&tree1));
 
 
 
