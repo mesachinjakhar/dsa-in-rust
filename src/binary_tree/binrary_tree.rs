@@ -100,6 +100,17 @@ pub fn height(root: &Option<Box<TreeNode>>) -> i32 {
     return 0;
 }
 
+pub fn height_helper(root: &Option<Box<TreeNode>>, ans: &mut i32) -> i32 {
+    if let Some(node) = root {
+        let left_count = height(&node.left);
+        let right_count = height(&node.right);
+        *ans = (*ans).max(left + height);
+        return max(left_count, right_count) + 1
+    }
+
+    return 0;
+}
+
 pub fn count(root: &Option<Box<TreeNode>>) -> i32 {
 
     if let Some(node) = root {
@@ -138,4 +149,10 @@ pub fn is_identical(p: &Option<Box<TreeNode>>, q: &Option<Box<TreeNode>>) -> boo
 
     return is_left && is_right && p.as_ref().unwrap().val == q.as_ref().unwrap().val ;
 
+}
+
+pub fn diameter(root: &Option<Box<TreeNode>>) -> i32 {
+    let mut ans = 0;
+    height_helper(root, &mut ans);
+    return ans;
 }
