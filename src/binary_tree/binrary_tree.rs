@@ -156,3 +156,37 @@ pub fn diameter(root: &Option<Box<TreeNode>>) -> i32 {
     height_helper(root, &mut ans);
     return ans;
 }
+
+
+pub fn top_view(root: &Option<Box<TreeNode>>) {
+    if root.is_none() {
+        return;
+    }
+
+    let mut queue: VecDeque<(&Box<TreeNode>, i32)> = VecDeque::new();
+    queue.push_back((root.as_ref().unwrap(), 0));
+    let mut map = HashMap::new();
+
+    while let Some((node, horizontal_distance)) = queue.pop_front() {
+        if !map.contains_key(&horizontal_distance) {
+            map.insert(horizontal_distance, node.val);
+        }
+
+        if let Some(left) = node.left.as_ref() {
+            queue.push_back((left, horizontal_distance-1)); 
+        }
+
+        if let Some(right) = node.right.as_ref() {
+            queue.push_back((right, horizontal_distance + 1));
+        }
+    }
+
+    let mut ans = Vec::new();
+
+    for (_, val) in map.iter() {
+        ans.push(val);
+    }
+
+    println!("Ans: {:?}", ans);
+
+}
