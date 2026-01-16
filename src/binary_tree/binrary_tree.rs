@@ -1,4 +1,4 @@
-use std::{cmp::max, collections::VecDeque};
+use std::{cmp::max, collections::VecDeque, collections::BTreeMap};
 
 
 #[derive(Debug, Clone)]
@@ -165,7 +165,7 @@ pub fn top_view(root: &Option<Box<TreeNode>>) {
 
     let mut queue: VecDeque<(&Box<TreeNode>, i32)> = VecDeque::new();
     queue.push_back((root.as_ref().unwrap(), 0));
-    let mut map = HashMap::new();
+    let mut map = BTreeMap::new();
 
     while let Some((node, horizontal_distance)) = queue.pop_front() {
         if !map.contains_key(&horizontal_distance) {
