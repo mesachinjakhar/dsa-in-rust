@@ -207,3 +207,13 @@ pub fn kth_level(root: &Option<Box<TreeNode>>, k: i32) {
     kth_level(&node.right, k - 1);
 
 }
+
+pub fn sum_tree(root: &mut Option<Box<TreeNode>>) -> i32 {
+    if let Some(node) = root {
+        let left = sum_tree(&mut node.left);
+        let right = sum_tree(& mut node.right);
+        node.val = node.val + left + right;
+    };
+
+    return 0;
+}
