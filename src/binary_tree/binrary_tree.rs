@@ -213,6 +213,7 @@ pub fn sum_tree(root: &mut Option<Box<TreeNode>>) -> i32 {
         let left = sum_tree(&mut node.left);
         let right = sum_tree(& mut node.right);
         node.val = node.val + left + right;
+        return node.val;
     };
 
     return 0;
