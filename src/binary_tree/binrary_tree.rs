@@ -218,3 +218,38 @@ pub fn sum_tree(root: &mut Option<Box<TreeNode>>) -> i32 {
 
     return 0;
 }
+
+
+pub fn search_helper(in_order: &Vec<i32>, value: i32, left: i32, right: i32) -> usize {
+    for i in left..=right {
+        if in_order[i as usize] == value {
+            return i as usize;
+        }
+    }
+    return 0
+}
+
+
+pub fn build_tree_using_pre_and_in_order(pre_order: &Vec<i32>, in_order: &Vec<i32>, pre_index: &mut usize, left: i32, right: i32) -> Option<Box<TreeNode>> {
+    if left > right {
+        return None;
+    };
+
+    let mut root = TreeNode {
+        val: pre_order[*pre_index],
+        left: None,
+        right: None
+    };
+
+    let in_index = search_helper(in_order, pre_order[*pre_index], left, right);
+
+    *pre_index += 1;
+
+    let left = build_tree_using_pre_and_in_order(pre_order, in_order, pre_index, left, in_index as i32 - 1 );
+    let right = build_tree_using_pre_and_in_order(pre_order, in_order, pre_index, in_index as i32 + 1, right);
+
+    root.left = left;
+    root.right = right;
+
+    return Some(Box::new(root));
+}
