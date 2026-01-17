@@ -104,7 +104,7 @@ pub fn height_helper(root: &Option<Box<TreeNode>>, ans: &mut i32) -> i32 {
     if let Some(node) = root {
         let left_count = height(&node.left);
         let right_count = height(&node.right);
-        *ans = (*ans).max(left + height);
+        *ans = (*ans).max(left_count + right_count);
         return max(left_count, right_count) + 1
     }
 
@@ -188,5 +188,22 @@ pub fn top_view(root: &Option<Box<TreeNode>>) {
     }
 
     println!("Ans: {:?}", ans);
+
+}
+
+pub fn kth_level(root: &Option<Box<TreeNode>>, k: i32) {
+    if root.is_none() {
+        return;
+    }
+
+    let node = root.as_ref().unwrap();
+
+    if k == 1 {
+        println!("{}", node.val);
+        return;
+    }
+
+    kth_level(&node.left, k - 1); 
+    kth_level(&node.right, k - 1);
 
 }
