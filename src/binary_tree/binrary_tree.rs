@@ -253,3 +253,50 @@ pub fn build_tree_using_pre_and_in_order(pre_order: &Vec<i32>, in_order: &Vec<i3
 
     return Some(Box::new(root));
 }
+
+use std::rc::Rc;
+use std::cell::RefCell;
+
+#[derive(Debug, Clone)]
+    pub struct TreeNode2 {
+    val: i32,
+    left: Option<Rc<RefCell<TreeNode2>>>,
+    right: Option<Rc<RefCell<TreeNode2>>>,
+}
+
+pub fn morris_inorder(root: Option<Rc<RefCell<TreeNode2>>>) -> Vec<i32> {
+    let mut result = Vec::new();
+    let mut curr = root;
+
+    while let Some(node_rc) = curr.clone() {
+        let left = node_rc.borrow().left.clone();
+        if left.is_none() {
+            result.push(node_rc.borrow().val);
+            curr = node_rc.borrow().right.clone();
+        } else {
+            let mut pred = left;
+            while let Some(pred_rc) = pred.clone() {
+                let right = pred_rc.borrow().right.clone();
+                if right.is_none() || (right.is_some() && Rc::ptr_eq(right.as_ref().unwrap(), curr.as_ref().unwrap())) {
+                    break;
+                }
+                pred = right;
+            }
+
+            let pred_rc = pred.unwrap();
+
+            if pred_rc.borrow().right.is_none() {
+                pred_rc.borrow_mut().right = curr.clone();
+                curr = node_rc.borrow().left.clone();
+            } else {
+                pred_rc.borrow_mut().right = None;
+                result.push(node_rc.borrow().val);
+                curr = node_rc.borrow().right.clone();
+            }
+        }
+
+    }
+
+    result
+
+}
