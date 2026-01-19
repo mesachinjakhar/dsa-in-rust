@@ -300,3 +300,50 @@ pub fn morris_inorder(root: Option<Rc<RefCell<TreeNode2>>>) -> Vec<i32> {
     result
 
 }
+
+pub fn delete(root: Option<Box<TreeNode>>, key: i32) -> Option<Box<TreeNode>>  {
+    if root.is_none() {
+        return None;
+    }
+
+    let mut root = root.unwrap();
+    
+    if key < root.val {
+        root.left = delete(root.left, key);
+        return Some(root)
+    } else if key > root.val {
+        root.right = delete(root.right, key);
+        return Some(root)
+    } else {
+        // case 1: left and right  both are none
+        if root.left.is_none() && root.right.is_none() {
+            // todo delete node
+            return None;
+        }
+        // case 2: 1 side is none; 
+        if root.left.is_none() {
+            return root.right;
+        } else if root.right.is_none() {
+            return root.left;
+        } else {
+            // both side are present
+            let root_right = root.right.clone();
+            let successor = find_successor(&root_right);
+            root.val = successor;
+            root.right = delete(root_right, successor);
+            return Some(root);
+        }
+
+    }
+}
+
+fn find_successor(root: &Option<Box<TreeNode>>) -> i32 {
+    let mut root = root.as_ref().unwrap();
+    let mut successor = root.val;
+    while !root.left.is_none() {
+        root = root.left.as_ref().unwrap();
+        successor = root.val;
+    }
+
+    return successor
+}
