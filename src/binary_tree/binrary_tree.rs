@@ -1,3 +1,4 @@
+use std::cmp::min;
 use std::{cmp::max, collections::VecDeque, collections::BTreeMap};
 
 
@@ -346,4 +347,88 @@ fn find_successor(root: &Option<Box<TreeNode>>) -> i32 {
     }
 
     return successor
+}
+
+pub fn inorder(root: Option<Box<TreeNode>>, vec1: &mut Vec<i32>) {
+    if let Some(node) = root {
+        inorder(node.left, vec1);
+        vec1.push(node.val);
+        inorder(node.right, vec1);
+    }
+    return;
+}
+
+pub fn helper(root1: Option<Box<TreeNode>>, root2: Option<Box<TreeNode>>) -> Option<Box<TreeNode>> {
+    let mut  vec1 = Vec::new();
+    let mut vec2 = Vec::new();
+
+    let inorder1 = inorder(root1, &mut vec1); 
+    let inorder2 = inorder(root2, & mut vec2);
+
+    let mut temp = Vec::new();
+
+    let mut i = 0; 
+    let mut j = 0; 
+
+    while i < vec1.len() && j < vec2.len() {
+        if vec1[i] < vec2[j] {
+            temp.push(vec1[i]);
+            i += 1; 
+        } else {
+            temp.push(vec2[j]);
+            j += 1;
+        }
+    }
+
+    while i < vec1.len() {
+        temp.push(vec1[i]);
+    }
+
+    while j < vec2.len() {
+        temp.push(vec2[j]);
+    }
+    let  st = 0; 
+    let end = temp.len() as i32 - 1 ;
+
+    let root = build_tree(&temp, st, end);
+    return root
+
+}
+
+fn build_tree(inorder: &Vec<i32>, st: i32, end: i32) -> Option<Box<TreeNode>> {
+    if st > end {
+        return None;
+    }
+
+    let mid = st + (end - st)/ 2; 
+    let mut root = TreeNode::new(inorder[mid as usize]);
+    root.left = build_tree(inorder,  st, mid - 1);
+    root.right = build_tree(inorder, mid+1, end);
+
+    return Some(Box::new(root))
+
+}
+
+struct largest {
+    min: i32,
+    max: i32,
+    size: i32, 
+    is_bst: bool
+}
+
+fn largest_bst(root: &Option<Box<TreeNode>>) -> largest {
+    if let Some(node) = root { 
+        let left = largest_bst(&node.left);
+        let right = largest_bst(&node.right);
+
+        if left.is_bst && right.is_bst && node.val > left.max && node.val < right.min {
+            largest { min: min(left.min, node.val), max: max(right.max, node.val), size: left.size + right.size + 1, is_bst: true }
+        } else {
+            return  largest { min: i32::MIN, max: i32::MAX, size: max(left.size, right.size), is_bst: false};
+        }
+
+    }
+    else {
+        return largest { min: i32::MAX, max: i32::MIN, size: 0, is_bst: true };
+    }
 }
