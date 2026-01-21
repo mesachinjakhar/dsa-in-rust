@@ -484,7 +484,7 @@ pub fn get_pred_succ(root: Option<Rc<RefCell<TreeNode2>>>, key: i32) -> (Option<
     let mut pred = None;
     let mut succ = None;
 
-    while let Some(node) = curr.clone() {
+    while let Some(node) = curr {
         if key < node.borrow().val {
             succ = Some(node.clone());
             curr = node.borrow().left.clone();
@@ -494,11 +494,12 @@ pub fn get_pred_succ(root: Option<Rc<RefCell<TreeNode2>>>, key: i32) -> (Option<
         } else {
             if node.borrow().left.is_some() {
                 pred = find_pred(node.borrow().left.clone());
-                break;
+               
             } if node.borrow().right.is_some() {
                 succ = find_succ(node.borrow().right.clone());
-                break;
             }
+
+            break;
         }
     }
 
