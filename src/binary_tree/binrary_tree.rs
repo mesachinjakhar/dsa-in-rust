@@ -265,6 +265,14 @@ use std::cell::RefCell;
     right: Option<Rc<RefCell<TreeNode2>>>,
 }
 
+#[derive(Debug, Clone)]
+    pub struct TreeNode3 {
+    val: i32,
+    left: Option<Rc<RefCell<TreeNode3>>>,
+    right: Option<Rc<RefCell<TreeNode3>>>,
+    next: Option<Rc<RefCell<TreeNode3>>>,
+}
+
 pub fn morris_inorder(root: Option<Rc<RefCell<TreeNode2>>>) -> Vec<i32> {
     let mut result = Vec::new();
     let mut curr = root;
@@ -431,4 +439,41 @@ fn largest_bst(root: &Option<Box<TreeNode>>) -> largest {
     else {
         return largest { min: i32::MAX, max: i32::MIN, size: 0, is_bst: true };
     }
+}
+
+pub fn populate_next_right_pointers(root: Option<Rc<RefCell<TreeNode3>>>) -> Option<Rc<RefCell<TreeNode3>>>{
+    if root.is_none() || root.as_ref().unwrap().borrow().left.is_none() {
+        return None;
+    }
+
+    let mut queue: VecDeque<_> = VecDeque::new();
+    let mut prev: Option<Rc<RefCell<TreeNode3>>> = None;
+    queue.push_back(root.clone().unwrap());
+
+    while !queue.is_empty() {
+        let level_size = queue.len();
+        let mut prev: Option<Rc<RefCell<TreeNode3>>> = None;
+
+        for _ in 0..level_size {
+            let node = queue.pop_front().unwrap();
+
+            if let Some(p) = prev {
+                p.borrow_mut().next = Some(node.clone());
+            }
+
+            prev = Some(node.clone());
+
+            let left = node.borrow().left.clone();
+            let right = node.borrow().right.clone();
+
+            if let Some(l) = left {
+                queue.push_back(l);
+            } if let Some(r) = right {
+                queue.push_back(r);
+            }
+        }
+    }
+
+    root
+
 }
