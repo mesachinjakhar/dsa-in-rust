@@ -477,3 +477,53 @@ pub fn populate_next_right_pointers(root: Option<Rc<RefCell<TreeNode3>>>) -> Opt
     root
 
 }
+
+
+pub fn get_pred_succ(root: Option<Rc<RefCell<TreeNode2>>>, key: i32) -> (Option<Rc<RefCell<TreeNode2>>>, Option<Rc<RefCell<TreeNode2>>>) {
+    let mut curr = root.clone();
+    let mut pred = None;
+    let mut succ = None;
+
+    while let Some(node) = curr.clone() {
+        if key < node.borrow().val {
+            succ = Some(node.clone());
+            curr = node.borrow().left.clone();
+        } else if key > node.borrow().val {
+            pred = Some(node.clone());
+            curr = node.borrow().right.clone();
+        } else {
+            if node.borrow().left.is_some() {
+                pred = find_pred(node.borrow().left.clone());
+                break;
+            } if node.borrow().right.is_some() {
+                succ = find_succ(node.borrow().right.clone());
+                break;
+            }
+        }
+    }
+
+    return (pred, succ)
+
+}
+
+pub fn find_pred(root: Option<Rc<RefCell<TreeNode2>>>) -> Option<Rc<RefCell<TreeNode2>>> {
+    let mut ans = root.clone();
+    let mut curr = root.clone();
+    while let Some(node) = curr {
+        ans = Some(node.clone());
+        curr = node.borrow().right.clone();
+    }
+    return ans
+}
+
+pub fn find_succ(root: Option<Rc<RefCell<TreeNode2>>>) -> Option<Rc<RefCell<TreeNode2>>> {
+    let mut ans = root.clone();
+    let mut curr = root.clone();
+
+    while let Some(node) = curr {
+        ans = Some(node.clone());
+        curr = node.borrow().left.clone();
+    }
+
+    return ans;
+}
