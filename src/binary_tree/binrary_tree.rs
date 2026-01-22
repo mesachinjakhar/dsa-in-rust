@@ -265,6 +265,13 @@ use std::cell::RefCell;
     right: Option<Rc<RefCell<TreeNode2>>>,
 }
 
+  impl TreeNode2 {
+    // create new leaf node
+    pub fn new(val: i32) -> Self {
+        TreeNode2 { val: val, left: None, right:None }
+    }
+}
+
 #[derive(Debug, Clone)]
     pub struct TreeNode3 {
     val: i32,
