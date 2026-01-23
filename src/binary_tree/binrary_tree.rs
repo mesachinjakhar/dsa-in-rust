@@ -555,3 +555,23 @@ fn insert_val(root: Option<Rc<RefCell<TreeNode2>>>, value: i32) -> Option<Rc<Ref
     }
 
 }
+
+fn floor(root: Option<Rc<RefCell<TreeNode2>>>, ans: &mut i32, key: i32) {
+    if root.is_none() {
+        return; 
+    }
+
+    let node = root.unwrap();
+    let node_rc = node.borrow();
+    if node_rc.val == key {
+        *ans = node_rc.val;
+        return;
+    }
+
+    else if node_rc.val > key {
+        floor(node_rc.left.clone(), ans, key);
+    } else {
+        *ans = node_rc.val;
+        floor(node_rc.right.clone(), ans, key);
+    }
+}
