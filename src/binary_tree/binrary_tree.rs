@@ -575,3 +575,23 @@ fn floor(root: Option<Rc<RefCell<TreeNode2>>>, ans: &mut i32, key: i32) {
         floor(node_rc.right.clone(), ans, key);
     }
 }
+
+fn ciel(root: Option<Rc<RefCell<TreeNode2>>>, key: i32, ans: &mut i32) {
+    if root.is_none() {
+        return;
+    }
+
+    let node = root.unwrap();
+    let node_rc = node.borrow();
+    if node_rc.val == key {
+        *ans = node_rc.val;
+        return;
+    }
+    else if node_rc.val < key {
+        ciel(node_rc.right.clone(), key, ans);
+    } else {
+        *ans = node_rc.val;
+        ciel(node_rc.left.clone(), key, ans);
+    }
+
+}
