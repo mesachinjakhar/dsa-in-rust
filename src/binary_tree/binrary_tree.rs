@@ -595,3 +595,26 @@ fn ciel(root: Option<Rc<RefCell<TreeNode2>>>, key: i32, ans: &mut i32) {
     }
 
 }
+
+fn range_sum(root: Option<Rc<RefCell<TreeNode2>>>, low: i32, high: i32, ans: &mut i32) {
+    if root.is_none() {
+        return; 
+    }
+
+    let node = root.unwrap();
+    let node_rc = node.borrow();
+    if node_rc.val >= low && node_rc.val <= high {
+        *ans = *ans + node_rc.val;
+        range_sum(node.borrow().left.clone(), low, high, ans);
+        range_sum(node.borrow().right.clone(), low, high, ans);
+
+    }
+    else if node_rc.val < low {
+        range_sum(node_rc.right.clone(), low, high, ans);
+    } 
+    
+    else {
+        range_sum(node_rc.left.clone(), low, high, ans);
+    }
+
+}
