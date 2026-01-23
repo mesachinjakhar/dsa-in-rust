@@ -535,3 +535,23 @@ pub fn find_succ(root: Option<Rc<RefCell<TreeNode2>>>) -> Option<Rc<RefCell<Tree
 
     return ans;
 }
+
+
+
+
+fn insert_val(root: Option<Rc<RefCell<TreeNode2>>>, value: i32) -> Option<Rc<RefCell<TreeNode2>>>{
+    if root.is_none() {
+        return Some(Rc::new(RefCell::new(TreeNode2::new(value))));
+    }
+
+    let node = root.unwrap();
+    let mut node_rc = node.borrow_mut();
+    if node_rc.val > value {
+        node_rc.left = insert_val(node_rc.left.clone(), value);
+        return Some(node.clone());
+    } else {
+        node_rc.right = insert_val(node_rc.right.clone(), value);
+        return Some(node.clone())
+    }
+
+}
